@@ -5,7 +5,7 @@
 if SHIELD_CRADIOS_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "cradios left"
+	default "Cradios"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
@@ -15,11 +15,11 @@ endif
 if SHIELD_CRADIOS_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "cradios right"
+	default "Cradios_Right"
 
 endif
 
-if SHIELD_CRADIOS_LEFT || SHIELD_CRADIOS_RIGHT
+if SHIELD_CRADIOS_RIGHT || SHIELD_CRADIOS_LEFT
 
 config ZMK_SPLIT
 	default y
