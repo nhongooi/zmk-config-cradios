@@ -37,6 +37,15 @@
         mods = <(MOD_LSFT|MOD_RSFT)>;
       };
     };
+    {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 3>;
+            then-layer = <4>;
+        };
+    };
+};
     keymap {
       compatible = "zmk,keymap";
       default_layer {
@@ -49,7 +58,7 @@
       };
       lower_layer {
         bindings = <
-    &kp LG(SPC)     &kp LC(LEFT)  &trans      &kp LC(RIGHT)  &trans             &kp LBKT  &kp N7  &kp N8 &kp N9 &kp RBKT
+    &kp LG(SPC)     &kp LG(LEFT)  &trans      &kp LG(RIGHT)  &trans             &kp LBKT  &kp N7  &kp N8 &kp N9 &kp RBKT
     &kp LG(LS(SPC)) &kp LG(J)     &kp LG(K)   &kp LG(L)      &kp LG(SEMI)       &kp SQT   &kp N4	&kp N5 &kp N6 &kp EQUAL
     &kp LG(LS(Q))   &kp LG(N1)    &kp LG(N2)  &kp LG(N3)     &kp LG(N4)         &kp MINUS &kp N1  &kp N2 &kp N3 &kp BSLH
                                             &trans     &trans             &kp DOT   &kp N0
@@ -60,14 +69,14 @@
     &kp ESC  &kp F1		&kp F2   &kp F3 	&kp F4     &kp PG_UP   &kp HOME 	&trans   &trans 		&kp GRAVE
     &trans   &kp F5		&kp F6   &kp F7 	&kp	F8     &kp LEFT    &kp DOWN 	&kp UP   &kp RIGHT 	&kp COLON
     &trans   &kp F9		&kp F10  &kp F11 	&kp F12    &kp PG_DN   &kp END 	  &kp DEL  &trans 	  &kp QMARK
-                               &mo 4    &trans     &trans     &trans
+                               &trans    &trans     &trans     &trans
         >;
       };
-      con_layer {
+      tab_layer {
           bindings = <
-    &kp LC(LS(T)) &kp LC(LS(TAB)) &kp LC(W) &kp LC(TAB) &kp LC(T)     &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC
-    &kp LC(Z)     &kp LC(X)       &kp LC(C) &kp LC(V)   &kp LC(Y)     &kp DQT   &kp DLLR  &kp PRCNT  &kp CARET &kp PLUS
-    &trans        &kp LA(B)       &kp LA(D) &kp LA(F)   &kp LC(N1)    &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp PIPE
+    &kp LG(LS(T)) &kp LG(LS(TAB)) &kp LG(W) &kp LG(TAB) &kp LG(T)     &kp LBRC  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC
+    &kp LG(Z)     &kp LG(X)       &kp LG(C) &kp LG(V)   &kp LG(Y)     &kp DQT   &kp DLLR  &kp PRCNT  &kp CARET &kp PLUS
+    &trans        &kp LA(B)       &kp LA(D) &kp LA(F)   &kp LG(N1)    &kp UNDER &kp EXCL  &kp AT     &kp HASH  &kp PIPE
                                             &trans      &trans        &trans    &kp RPAR
           >;
         };
